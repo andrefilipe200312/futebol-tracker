@@ -1,0 +1,171 @@
+{
+ "frame": 0,
+ "baliza": "direita",
+ "pontos": [
+  {
+   "nome": "centro da baliza (meio da linha de golo)",
+   "campo": [
+    0,
+    0
+   ],
+   "campo_m": [
+    50,
+    0
+   ],
+   "imagem": [
+    757,
+    163
+   ]
+  },
+  {
+   "nome": "pequena área: canto ESQUERDO na linha de golo",
+   "campo": [
+    0,
+    9.16
+   ],
+   "campo_m": [
+    50,
+    9.16
+   ],
+   "imagem": [
+    614,
+    171
+   ]
+  },
+  {
+   "nome": "pequena área: canto DIREITO na linha de golo",
+   "campo": [
+    0,
+    -9.16
+   ],
+   "campo_m": [
+    50,
+    -9.16
+   ],
+   "imagem": [
+    912,
+    189
+   ]
+  },
+  {
+   "nome": "pequena área: canto da frente ESQUERDO",
+   "campo": [
+    5.5,
+    9.16
+   ],
+   "campo_m": [
+    44.5,
+    9.16
+   ],
+   "imagem": [
+    535,
+    180
+   ]
+  },
+  {
+   "nome": "pequena área: canto da frente DIREITO",
+   "campo": [
+    5.5,
+    -9.16
+   ],
+   "campo_m": [
+    44.5,
+    -9.16
+   ],
+   "imagem": [
+    837,
+    197
+   ]
+  },
+  {
+   "nome": "marca de penálti",
+   "campo": [
+    11,
+    0
+   ],
+   "campo_m": [
+    39,
+    0
+   ],
+   "imagem": [
+    556,
+    199
+   ]
+  },
+  {
+   "nome": "grande área: canto ESQUERDO na linha de golo",
+   "campo": [
+    0,
+    20.16
+   ],
+   "campo_m": [
+    50,
+    20.16
+   ],
+   "imagem": [
+    488,
+    168
+   ]
+  },
+  {
+   "nome": "grande área: canto DIREITO na linha de golo",
+   "campo": [
+    0,
+    -20.16
+   ],
+   "campo_m": [
+    50,
+    -20.16
+   ],
+   "imagem": [
+    1036,
+    197
+   ]
+  },
+  {
+   "nome": "grande área: canto da frente ESQUERDO",
+   "campo": [
+    16.5,
+    20.16
+   ],
+   "campo_m": [
+    33.5,
+    20.16
+   ],
+   "imagem": [
+    223,
+    197
+   ]
+  },
+  {
+   "nome": "grande área: canto da frente DIREITO",
+   "campo": [
+    16.5,
+    -20.16
+   ],
+   "campo_m": [
+    33.5,
+    -20.16
+   ],
+   "imagem": [
+    891,
+    259
+   ]
+  },
+  {
+   "nome": "arco da área: ponto mais afastado da baliza",
+   "campo": [
+    20.15,
+    0
+   ],
+   "campo_m": [
+    29.85,
+    0
+   ],
+   "imagem": [
+    360,
+    226
+   ]
+  }
+ ]
+}

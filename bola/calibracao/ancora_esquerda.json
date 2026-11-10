@@ -1,0 +1,171 @@
+{
+ "frame": 2340,
+ "baliza": "esquerda",
+ "pontos": [
+  {
+   "nome": "centro da baliza (meio da linha de golo)",
+   "campo": [
+    0,
+    0
+   ],
+   "campo_m": [
+    -50,
+    0
+   ],
+   "imagem": [
+    363,
+    176
+   ]
+  },
+  {
+   "nome": "pequena área: canto ESQUERDO na linha de golo",
+   "campo": [
+    0,
+    9.16
+   ],
+   "campo_m": [
+    -50,
+    -9.16
+   ],
+   "imagem": [
+    217,
+    184
+   ]
+  },
+  {
+   "nome": "pequena área: canto DIREITO na linha de golo",
+   "campo": [
+    0,
+    -9.16
+   ],
+   "campo_m": [
+    -50,
+    9.16
+   ],
+   "imagem": [
+    498,
+    168
+   ]
+  },
+  {
+   "nome": "pequena área: canto da frente ESQUERDO",
+   "campo": [
+    5.5,
+    9.16
+   ],
+   "campo_m": [
+    -44.5,
+    -9.16
+   ],
+   "imagem": [
+    269,
+    190
+   ]
+  },
+  {
+   "nome": "pequena área: canto da frente DIREITO",
+   "campo": [
+    5.5,
+    -9.16
+   ],
+   "campo_m": [
+    -44.5,
+    9.16
+   ],
+   "imagem": [
+    540,
+    174
+   ]
+  },
+  {
+   "nome": "marca de penálti",
+   "campo": [
+    11,
+    0
+   ],
+   "campo_m": [
+    -39,
+    0
+   ],
+   "imagem": [
+    434,
+    188
+   ]
+  },
+  {
+   "nome": "grande área: canto ESQUERDO na linha de golo",
+   "campo": [
+    0,
+    20.16
+   ],
+   "campo_m": [
+    -50,
+    -20.16
+   ],
+   "imagem": [
+    16,
+    202
+   ]
+  },
+  {
+   "nome": "grande área: canto DIREITO na linha de golo",
+   "campo": [
+    0,
+    -20.16
+   ],
+   "campo_m": [
+    -50,
+    20.16
+   ],
+   "imagem": [
+    618,
+    164
+   ]
+  },
+  {
+   "nome": "grande área: canto da frente ESQUERDO",
+   "campo": [
+    16.5,
+    20.16
+   ],
+   "campo_m": [
+    -33.5,
+    -20.16
+   ],
+   "imagem": [
+    140,
+    226
+   ]
+  },
+  {
+   "nome": "grande área: canto da frente DIREITO",
+   "campo": [
+    16.5,
+    -20.16
+   ],
+   "campo_m": [
+    -33.5,
+    20.16
+   ],
+   "imagem": [
+    806,
+    176
+   ]
+  },
+  {
+   "nome": "arco da área: ponto mais afastado da baliza",
+   "campo": [
+    20.15,
+    0
+   ],
+   "campo_m": [
+    -29.85,
+    0
+   ],
+   "imagem": [
+    608,
+    194
+   ]
+  }
+ ]
+}

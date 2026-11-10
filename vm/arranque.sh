@@ -26,7 +26,7 @@ if [ ! -f $W/.deps ]; then
   apt-get -qq update && apt-get -qq install -y python3-venv >/dev/null 2>&1
   python3 -m venv $W/venv
   $W/venv/bin/pip -q install --upgrade pip
-  $W/venv/bin/pip -q install "ultralytics<8.4" scipy
+  $W/venv/bin/pip -q install "ultralytics==8.4.192" scipy   # 8.4: precisa para o YOLO26
   $W/venv/bin/pip -q uninstall -y opencv-python
   $W/venv/bin/pip -q install opencv-python-headless
   touch $W/.deps

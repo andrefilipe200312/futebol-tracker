@@ -14,3 +14,7 @@ vm/pacote.zip
 # modelos OpenVINO (gerados a partir do yolov8n.pt, só para CPU local)
 ov*_openvino_model/
 .DS_Store
+
+# bola: trecho, frames e resultados (grandes) e pesos descarregados
+bola/dados/
+bola/pesos/
