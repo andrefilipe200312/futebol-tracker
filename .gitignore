@@ -1,0 +1,16 @@
+# resultados e dados intermédios (grandes; o vídeo fica no bucket)
+min1/
+out/
+out1fps/
+demo_*/
+track_test/
+runs/
+*.mp4
+*.log
+# gerados
+__pycache__/
+colab/pacote.zip
+vm/pacote.zip
+# modelos OpenVINO (gerados a partir do yolov8n.pt, só para CPU local)
+ov*_openvino_model/
+.DS_Store

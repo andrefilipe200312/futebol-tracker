@@ -1,0 +1,4 @@
+{"note": "Frame 0 (t=0 s): pontos do campo (m, origem no centro, x para a baliza da direita, y para a lateral do fundo) e respetivos píxeis, marcados à mão",
+ "L": 100.0, "W": 64.0,
+ "pitch": [[0, 0], [-9.15, 0], [9.15, 0], [0, 9.15], [0, -9.15]],
+ "image": [[577, 238], [281, 255], [862, 235], [625, 212], [478, 279]]}
