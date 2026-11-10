@@ -3,7 +3,7 @@ Funciona localmente (OpenVINO no CPU) e no Colab (GPU/CUDA, escolhido automatica
 Processa por trechos (--chunk segundos); cada trecho fica em <saida>/chunks/ e é saltado se já existir,
 por isso pode ser interrompido e retomado. No fim junta tudo em <saida>/jogadores.csv.
 
-Uso: python process.py <video> <saida> [--fps 5] [--t0 0] [--t1 fim] [--chunk 300] [--video] [--show]
+Uso: python process.py <video> <saida> [--modelo yolov8n|yolo26s] [--fps 5] [--t0 0] [--t1 fim] [--chunk 300] [--video] [--show]
   --video  grava um mp4 por trecho com caixas, IDs e equipa
   --show   mostra uma janela ao vivo (só localmente)"""
 import os, sys, json, csv, time, argparse
@@ -20,6 +20,7 @@ ap.add_argument('video'); ap.add_argument('out')
 ap.add_argument('--fps', type=float, default=5); ap.add_argument('--t0', type=float, default=0); ap.add_argument('--t1', type=float, default=None)
 ap.add_argument('--chunk', type=float, default=300); ap.add_argument('--reg-every', type=float, default=1.0, help='segundos entre registos completos nas referências')
 ap.add_argument('--video', dest='save_video', action='store_true'); ap.add_argument('--show', action='store_true')
+ap.add_argument('--modelo', default='yolov8n', choices=['yolov8n', 'yolo26s'], help='detetor de pessoas (yolo26s: menos IDs partidos, mas visualmente pior neste jogo e muito mais lento no CPU)')
 ap.add_argument('--teams-model', default=str(HERE / 'teams_model.npz'))
 ap.add_argument('--labels', default='0=rosa,1=rosa,4=vermelho,5=arbitro,2=fora,3=fora')
 a = ap.parse_args()
@@ -27,19 +28,25 @@ a = ap.parse_args()
 out = Path(a.out); (out / 'chunks').mkdir(parents=True, exist_ok=True)
 C = np.load(a.teams_model)['C']; lab_of = dict(x.split('=') for x in a.labels.split(','))
 
+# modelo de deteção: pesos PyTorch (descarregados automaticamente se faltarem) e versão OpenVINO local (só CPU)
+MODELOS = {'yolo26s': ('yolo26s.pt', 'ov1280_yolo26s_openvino_model'),   # precisa de ultralytics >= 8.4
+           'yolov8n': ('yolov8n.pt', 'ov1280_openvino_model')}
+
 def load_model():
     from ultralytics import YOLO
+    pt, ov = MODELOS[a.modelo]
+    pt = str(HERE / pt) if (HERE / pt).exists() else pt
     try:
         import torch
         if torch.cuda.is_available():
-            print('deteção: GPU', torch.cuda.get_device_name(0), flush=True)
-            return YOLO(str(HERE / 'yolov8n.pt')), dict(device=0, half=True)
+            print('deteção:', a.modelo, 'GPU', torch.cuda.get_device_name(0), flush=True)
+            return YOLO(pt), dict(device=0, half=True)
     except Exception: pass
-    if (HERE / 'ov1280_openvino_model').exists():
-        print('deteção: OpenVINO (CPU)', flush=True)
-        return YOLO(str(HERE / 'ov1280_openvino_model'), task='detect'), {}
-    print('deteção: PyTorch (CPU)', flush=True)
-    return YOLO(str(HERE / 'yolov8n.pt')), {}
+    if (HERE / ov).exists():
+        print('deteção:', a.modelo, 'OpenVINO (CPU)', flush=True)
+        return YOLO(str(HERE / ov), task='detect'), {}
+    print('deteção:', a.modelo, 'PyTorch (CPU)', flush=True)
+    return YOLO(pt), {}
 model, kw = load_model()
 bf = bench_filter()
 
